@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="icon" type="image/png" href="img/icon1.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="select-container">
+<select id="wallpaperSelector" class="select select-bordered w-full max-w-xs">
+  <option value="">Pilih Wallpaper</option>
+  <option value="img/1.gif">theme 1</option>
+  <option value="img/12.gif">theme 2</option>
+    <option value="img/3.jpg">theme 3</option>
+    <option value="img/4.jpg">theme 4</option>
+  
+
+</select>
+</div>
+
+    <div class="todo-container">
+        <div class="square" style="--i:0;"></div>
+        <div class="square" style="--i:1;"></div>
+		<div class="square" style="--i:2;"></div>
+		<div class="square" style="--i:3;"></div>
+		<div class="square" style="--i:4;"></div>
+		<div class="square" style="--i:5;"></div>
+        <div class="square" style="--i:6;"></div>
+		<div class="square" style="--i:7;"></div>
+		<div class="square" style="--i:8;"></div>
+        <h2 class="judul">TO DO LIST</h2>
+        <div class="stats-container">
+    <div class="stat-box purple">
+        <h4>TOTAL TASKS</h4>
+        <span id="total-tasks">0</span>
+    </div>
+    <div class="stat-box green">
+        <h4>COMPLETED</h4>
+        <span id="completed-tasks">0</span>
+    </div>
+    <div class="stat-box yellow">
+        <h4>PENDING</h4>
+        <span id="pending-tasks">0</span>
+    </div>
+    <div class="stat-box blue">
+        <h4>PROGRESS</h4>
+        <span id="progress">0%</span>
+    </div>
+</div>
+
+        <div class="input-row">
+            <input type="text" id="todo-input" placeholder="Add a todo...">
+            <input type="date" id="todo-date">
+            <button id="add-btn">+</button>
+        </div>
+        <div class="action-row">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search task...">
+                
+            </div>
+            <div class="buttons-box">
+                <button id="filter-btn">FILTER</button>
+                <button id="delete-all-btn"><img src="https://img.icons8.com/?size=100&id=68064&format=png&color=000000" alt="" height="15px"></button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="todo-list">
+                <tr>
+                    <td colspan="4" style="text-align:center;">No task found</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+document.getElementById('wallpaperSelector').addEventListener('change', function() {
+    const selected = this.value;
+    if (selected) {
+        document.body.style.backgroundImage = `url('${selected}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+    } else {
+        document.body.style.backgroundImage = '';
+    }
+});
+</script>
+    <script src="js/script.js"></script>
+</body>
+</html>
